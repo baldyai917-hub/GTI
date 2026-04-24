@@ -310,7 +310,7 @@ p {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 80px);
   min-height: 500px;
   overflow: hidden;
 }
@@ -783,7 +783,7 @@ textarea.form-control {
     top: 90px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 80px);
     background-color: var(--color-white);
     flex-direction: column;
     padding: 2rem;
@@ -856,5 +856,6 @@ textarea.form-control {
     font-size: 28px;
   }
 }
+
 
 
