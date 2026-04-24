@@ -182,7 +182,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 45px;
 }
 
 .logo-wrapper {
@@ -191,7 +191,7 @@ p {
 }
 
 .logo-wrapper img {
-  height: 90px;
+  height: 45px;
   width: auto;
 }
 
@@ -701,13 +701,13 @@ textarea.form-control {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1.5fr;
   gap: 4rem;
   margin-bottom: 4rem;
 }
 
 .footer-logo {
-  height: 60px;
+  height: 35px;
   margin-bottom: 1.5rem;
   filter: brightness(0) invert(1);
 }
@@ -821,7 +821,7 @@ textarea.form-control {
   bottom: 30px;
   right: 30px;
   width: 60px;
-  height: 60px;
+  height: 35px;
   background-color: #25D366;
   color: white;
   border-radius: 50px;
