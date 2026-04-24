@@ -821,7 +821,7 @@ textarea.form-control {
   bottom: 30px;
   right: 30px;
   width: 60px;
-  height: 35px;
+  height: 60px;
   background-color: #25D366;
   color: white;
   border-radius: 50px;
@@ -856,4 +856,5 @@ textarea.form-control {
     font-size: 28px;
   }
 }
+
 
