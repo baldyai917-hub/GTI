@@ -182,7 +182,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 45px;
+  height: 80px;
 }
 
 .logo-wrapper {
@@ -856,3 +856,4 @@ textarea.form-control {
     font-size: 28px;
   }
 }
+
