@@ -90,9 +90,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 3. Hero Slider (Homepage Only) - Disabled (Static Banner per brief)
+  // 3. Hero Slider (Homepage Only)
   // ==========================================
-  // No slider needed, static hero banner only.
+  const heroSlider = document.querySelector('.hero-slider');
+  if (heroSlider) {
+    const sliderTrack = heroSlider.querySelector('.slider-track');
+    const slides = heroSlider.querySelectorAll('.slide');
+    const dots = heroSlider.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let sliderInterval;
+    const SLIDE_DURATION = 5500; // 5.5 seconds
+    const totalSlides = slides.length;
+
+    function goToSlide(index) {
+      // Update dots
+      if(dots.length > 0) dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      if(dots.length > 0) dots[currentSlide].classList.add('active');
+
+      // Slide the track horizontally
+      const offset = -(currentSlide * (100 / totalSlides));
+      sliderTrack.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      goToSlide(next);
+    }
+
+    // Start auto-play
+    function startAutoPlay() {
+      if(totalSlides > 1) sliderInterval = setInterval(nextSlide, SLIDE_DURATION);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(sliderInterval);
+    }
+
+    startAutoPlay();
+
+    // Pause on hover
+    heroSlider.addEventListener('mouseenter', stopAutoPlay);
+    heroSlider.addEventListener('mouseleave', startAutoPlay);
+
+    // Dot click navigation
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'));
+        if (slideIndex !== currentSlide) {
+          stopAutoPlay();
+          goToSlide(slideIndex);
+          startAutoPlay();
+        }
+      });
+    });
+  }
 
   // ==========================================
   // 4. Scroll Fade-in Animations
